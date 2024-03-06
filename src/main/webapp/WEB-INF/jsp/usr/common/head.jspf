@@ -20,29 +20,70 @@
 <!-- 제이쿼리 불러오기 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+<style>
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	text-decoration: none;
+	color: #333333;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-weight: 300;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	padding: 0 48px;
+}
+
+ul a {
+	font-size: 16px;
+}
+
+#logo a {
+	display: flex;
+	justify-content: center;
+	padding-top: 1px;
+	weight: 80px;
+	height: 80px;
+}
+
+#menu {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px
+}
+
+#menu a {
+	padding-bottom: 22px;
+}
+
+#menu a:hover {
+	border-bottom: 3px solid #004679;
+}
+</style>
 <body>
-	<header>
-		<div class="h-20 flex mx-auto items-center text-3xl">
-			<a href="/">이미지</a>
-			<div class="flex-grow"></div>
-			<ul class="flex">
-				<li><a class="hover:underline" href="/">홈으로</a></li>
-				<li><a class="hover:underline" href="../article/list?boardId=1&page=1">공지사항</a></li>
-				<li><a class="hover:underline" href="../article/list?boardId=1&page=1">자유게시판</a></li>
-				<li><a class="hover:underline" href="../article/list?boardId=1&page=1">채용공고</a></li>
-				<li><a class="hover:underline" href="../article/list?boardId=1&page=1">병원리뷰</a></li>
-				<c:if test="${!rq.isLogined() }">
-					<li><a class="hover:underline" href="../member/login">LOGIN</a></li>
-					<li><a class="hover:underline" href="../member/join">JOIN</a></li>
-				</c:if>
-				<c:if test="${rq.isLogined() }">
-					<li><a class="hover:underline" href="../article/write">WRITE</a></li>
-					<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/myPage">MYPAGE</a></li>
-					<li><a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline"
-							href="../member/doLogout">LOGOUT</a></li>
-				</c:if>
-			</ul>
-		</div>
-	</header>
+<header>
+	<div id="logo">
+		<a href="/"><img src="https://i.postimg.cc/rwkRHjYB/image.png" height="32px"></a>
+	</div>
+	<ul id="menu">
+		<li><a href="#">채용 공고</a></li>
+		<li><a href="#">병원 리뷰</a></li>
+		<li><a href="#">자유게시판</a></li>
+		<li><a href="#">공지사항</a></li>
+		<li><a href="../member/login">로그인</a></li>
+		<c:if test="${rq.isLogined() }">
+			<li><a class="hover:underline" href="../article/write">글쓰기</a></li>
+			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/myPage">회원정보</a></li>
+			<li><a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline"
+				href="../member/doLogout">로그아웃</a></li>
+		</c:if>
+	</ul>
+</header>
 	<h1 style="font-size: 2rem;">${pageTitle }</h1>
 	<hr />

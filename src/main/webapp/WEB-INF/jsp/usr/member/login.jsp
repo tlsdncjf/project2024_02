@@ -3,222 +3,288 @@
 <c:set var="pageTitle" value="LOGIN"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-<<style>
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; 
-  font-family: Raleway, sans-serif;
-}
+<script>
+	window.addEventListener('DOMContentLoaded', function() {
+		var signInTab = document.querySelector('.sign-in');
+		var signUpTab = document.querySelector('.sign-up');
+		var loginWrap = document.querySelector('.login-wrap');
 
+		signInTab.addEventListener('click', function() {
+			loginWrap.style.height = '670px';
+		});
+
+		signUpTab.addEventListener('click', function() {
+			loginWrap.style.height = '900px';
+		});
+	});
+</script>
+</body>
+</html>
+<style>
 body {
-  background: linear-gradient(90deg, #C7C5F4, #776BCC);   
+	margin: 0;
+	color: #6a6f8c;
+	background: #c8c8c9;
+	font: 600 16px/18px 'Open Sans', sans-serif;
+	min-height: 120vh;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+foot {
+	background: #c8c8c8;
 }
 
-.screen {   
-  background: linear-gradient(90deg, #5D54A4, #7C78B8);   
-  position: relative; 
-  height: 600px;
-  width: 360px; 
-  box-shadow: 0px 0px 24px #5C5696;
+*, :after, :before {
+	box-sizing: border-box
 }
 
-.screen__content {
-  z-index: 1;
-  position: relative; 
-  height: 100%;
+.clearfix:after, .clearfix:before {
+	content: '';
+	display: table
 }
 
-.screen__background {   
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);  
+img {
+	max-width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞게 조절합니다. */
+	height: auto; /* 이미지의 높이를 자동으로 조절하여 비율을 유지합니다. */
 }
 
-.screen__background__shape {
-  transform: rotate(45deg);
-  position: absolute;
+.clearfix:after {
+	clear: both;
+	display: block
 }
 
-.screen__background__shape1 {
-  height: 520px;
-  width: 520px;
-  background: #FFF; 
-  top: -50px;
-  right: 120px; 
-  border-radius: 0 72px 0 0;
+a {
+	color: inherit;
+	text-decoration: none
 }
 
-.screen__background__shape2 {
-  height: 220px;
-  width: 220px;
-  background: #6C63AC;  
-  top: -172px;
-  right: 0; 
-  border-radius: 32px;
+.login-wrap {
+	width: 100%;
+	margin: auto;
+	max-width: 525px;
+	min-height: 670px;
+	position: relative;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0
+		rgba(0, 0, 0, .19);
 }
 
-.screen__background__shape3 {
-  height: 540px;
-  width: 190px;
-  background: linear-gradient(270deg, #5D54A4, #6A679E);
-  top: -24px;
-  right: 0; 
-  border-radius: 32px;
+.login-html {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 90px 70px 50px 70px;
+	background: rgba(236, 230, 204, .9);
 }
 
-.screen__background__shape4 {
-  height: 400px;
-  width: 200px;
-  background: #7E7BB9;  
-  top: 420px;
-  right: 50px;  
-  border-radius: 60px;
+.login-html .sign-in-htm, .login-html .sign-up-htm {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	transition: all .4s linear;
 }
 
-.login {
-  width: 320px;
-  padding: 30px;
-  padding-top: 156px;
+.login-html .sign-in, .login-html .sign-up, .login-form .group .check {
+	display: none;
 }
 
-.login__field {
-  padding: 20px 0px;  
-  position: relative; 
+.login-html .tab, .login-form .group .label, .login-form .group .button
+	{
+	text-transform: uppercase;
 }
 
-.login__icon {
-  position: absolute;
-  top: 30px;
-  color: #7875B5;
+.login-html .tab {
+	font-size: 22px;
+	margin-right: 15px;
+	padding-bottom: 5px;
+	margin: 0 15px 10px 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
 }
 
-.login__input {
-  border: none;
-  border-bottom: 2px solid #D1D1D4;
-  background: none;
-  padding: 10px;
-  padding-left: 24px;
-  font-weight: 700;
-  width: 75%;
-  transition: .2s;
+.login-html .sign-in:checked+.tab, .login-html .sign-up:checked+.tab {
+	color: #ffff0;
+	border-color: #1161ee;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-  outline: none;
-  border-bottom-color: #6A679E;
+.login-form {
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
 }
 
-.login__submit {
-  background: #fff;
-  font-size: 14px;
-  margin-top: 30px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid #D4D3E8;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #4C489D;
-  box-shadow: 0px 2px 2px #5C5696;
-  cursor: pointer;
-  transition: .2s;
+.login-form .group {
+	margin-bottom: 15px;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
-  border-color: #6A679E;
-  outline: none;
+.login-form .group .label, .login-form .group .input, .login-form .group .button
+	{
+	width: 100%;
+	color: #fff;
+	display: block;
 }
 
-.button__icon {
-  font-size: 24px;
-  margin-left: auto;
-  color: #7875B5;
+.login-form .group .input, .login-form .group .button {
+	border: none;
+	padding: 15px 20px;
+	border-radius: 25px;
+	background: rgba(0, 0, 0, .4);
 }
 
-.social-login { 
-  position: absolute;
-  height: 140px;
-  width: 160px;
-  text-align: center;
-  bottom: 0px;
-  right: 0px;
-  color: #fff;
+.login-form .group input[data-type="password"] {
+	text-security: circle;
+	-webkit-text-security: circle;
 }
 
-.social-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.login-form .group .label {
+	color: #aaaaaa;
+	font-size: 12px;
 }
 
-.social-login__icon {
-  padding: 20px 10px;
-  color: #fff;
-  text-decoration: none;  
-  text-shadow: 0px 0px 8px #7875B5;
+.login-form .group .button {
+	background: #1161ee;
 }
 
-.social-login__icon:hover {
-  transform: scale(1.5);  
+.login-form .group label .icon {
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	position: relative;
+	display: inline-block;
+	background: rgba(0, 0, 0, .9);
+}
+
+.login-form .group label .icon:before, .login-form .group label .icon:after
+	{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: #fff;
+	position: absolute;
+	transition: all .2s ease-in-out 0s;
+}
+
+.login-form .group label .icon:before {
+	left: 3px;
+	width: 5px;
+	bottom: 6px;
+	transform: scale(0) rotate(0);
+}
+
+.login-form .group label .icon:after {
+	top: 6px;
+	right: 0;
+	transform: scale(0) rotate(0);
+}
+
+.login-form .group .check:checked+label {
+	color: #fff;
+}
+
+.login-form .group .check:checked+label .icon {
+	background: #1161ee;
+}
+
+.login-form .group .check:checked+label .icon:before {
+	transform: scale(1) rotate(45deg);
+}
+
+.login-form .group .check:checked+label .icon:after {
+	transform: scale(1) rotate(-45deg);
+}
+
+.login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm
+	{
+	transform: rotate(0);
+}
+
+.login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+	transform: rotate(0);
+}
+
+.hr {
+	height: 2px;
+	margin: 60px 0 50px 0;
+	background: rgba(0, 0, 0, .9);
+}
+
+.foot-lnk {
+	text-align: center;
+}
+
+.input.type {
+	color: #00000; /* 텍스트 입력란의 글자색을 검은색으로 설정합니다. */
+}
+
+.input:focus {
+	color: #00000; /* 포커스가 됐을 때도 글자색을 검은색으로 유지합니다. */
 }
 </style>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
+			In</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<form action="../member/doLogin" method="POST">
+				<div class="sign-in-htm">
 
-<div class="container">
-  <div class="screen">
-    <div class="screen__content">
-      <form class="login">
-        <div class="login__field">
-          <i class="login__icon fas fa-user"></i>
-          <input type="text" class="login__input" placeholder="User name / Email">
-        </div>
-        <div class="login__field">
-          <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Password">
-        </div>
-        <button class="button login__submit">
-          <span class="button__text">Log In Now</span>
-          <i class="button__icon fas fa-chevron-right"></i>
-        </button>       
-      </form>
-      <div class="social-login">
-        <h3>log in via</h3>
-        <div class="social-icons">
-          <a href="#" class="social-login__icon fab fa-instagram"></a>
-          <a href="#" class="social-login__icon fab fa-facebook"></a>
-          <a href="#" class="social-login__icon fab fa-twitter"></a>
-        </div>
-      </div>
-    </div>
-    <div class="screen__background">
-      <span class="screen__background__shape screen__background__shape4"></span>
-      <span class="screen__background__shape screen__background__shape3"></span>    
-      <span class="screen__background__shape screen__background__shape2"></span>
-      <span class="screen__background__shape screen__background__shape1"></span>
-    </div>    
-  </div>
+					<div class="group">
+						<label for="user" class="label">아이디</label> <input name="loginId" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">비밀번호</label> <input name="loginPw" type="password" class="input"
+							data-type="password">
+					</div>
+					<div class="group">
+						<input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span>
+							로그인 정보 저장</label>
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="Sign In">
+					</div>
+
+					<div class="hr"></div>
+					<div class="foot-lnk">
+						<a href="#forgot">Forgot Password?</a>
+
+					</div>
+
+				</div>
+			</form>
+			<div class="sign-up-htm">
+				<form action="../member/doJoin" method="POST">
+					<div class="group">
+						<label for="user" class="label">아이디</label> <input name="loginId" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">비밀번호</label> <input name="pass" type="password" class="input" data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">비밀번호 확인</label> <input name="pass" type="password" class="input"
+							data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">이메일</label> <input name="email" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">전화번호</label> <input name="cellphoneNum" type="text" class="input">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">닉네임</label> <input name="nickname" type="text" class="input">
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="Sign Up">
+					</div>
+				</form>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-
-<%@ include file="../common/foot.jspf"%>

@@ -459,7 +459,7 @@ footer {
 </style>
 <header>
 	<div id="logo">
-		<a href="/"><img src="https://i.postimg.cc/rwkRHjYB/image.png" height="32px"></a>
+		<a href="/">LOGO</a>
 	</div>
 	<ul id="menu">
 		<li><a href="#">채용 공고</a></li>
@@ -467,7 +467,7 @@ footer {
 		<li><a href="#">자유게시판</a></li>
 		<li><a href="#">공지사항</a></li>
 		<c:if test="${!rq.isLogined() }">
-			<li><a class="hover:underline" href="../member/login">LOGIN</a></li>
+			<li><a class="hover:underline" href="../member/login">로그인</a></li>
 		</c:if>
 		<c:if test="${rq.isLogined() }">
 			<li><a class="hover:underline" href="../article/write">글쓰기</a></li>
@@ -481,10 +481,10 @@ footer {
 <div id="main">
 	<div id="text">
 		<div class="align">
-			<h1 class="whtie">사회적 거리두기</h1>
-			<h2 class="whtie">수도권 2단계, 비수도권 1.5단계 거리두기</h2>
-			<h3>3.15(월) - 3.28(일) 2주간 유지</h3>
-			<p class="whtie">5인이상 사적모임 금지 조치 유지</p>
+			<h1 class="whtie">관련 정보로 바꿀 예정</h1>
+			<h2 class="whtie">핫 이슈가 올라오게끔 변경</h2>
+			<h3>배경 이미지는 치료실이 나올수있게끔 초마다 사진 바뀌게끔</h3>
+			<p class="whtie">	</p>
 		</div>
 	</div>
 </div>
@@ -494,12 +494,11 @@ footer {
 		<div class="textBox">
 			<div class="align">
 				<P>병원 리뷰</P>
-				<h1>게시판</h1>
+				<h1>별점 확인</h1>
 				<p>병원에 대한 평가가 궁금하다면?</p>
 				<div class="btn">
 					<a target="_blank"
-						href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun=">바로가기
-						></a>
+						href="../article/list">바로가기 ></a>
 				</div>
 			</div>
 		</div>
@@ -512,9 +511,9 @@ footer {
 			<div class="align">
 				<P>채용 공고</P>
 				<h1>이직과 취업을 하고싶다면</h1>
-				<p>지금바로 공고확인하</p>
+				<p>지금바로 공고확인하기</p>
 				<div class="btn">
-					<a target="_blank" href="https://www.youtube.com/watch?v=hQuSedRi4uk">바로가기 ></a>
+					<a target="_blank" href="../article/list">바로가기 ></a>
 				</div>
 			</div>
 		</div>
@@ -525,13 +524,12 @@ footer {
 	<div class="box" id="two">
 		<div class="textBox">
 			<div class="align">
-				<P>65세 이상 어르신을 위한</P>
-				<h1>생활 건강수칙</h1>
+				<P>치료사들의 힐링을 위한</P>
+				<h1>자유 게시판</h1>
 				<p>외부활동 / 생활 속 건강 수칙</p>
 				<div class="btn">
 					<a target="_blank"
-						href="http://ncov.mohw.go.kr/infoBoardView.do?brdId=3&brdGubun=32&dataGubun=&ncvContSeq=3931&contSeq=3931&board_id=&gubun=">바로가기
-						></a>
+						href="../article/list">바로가기 ></a>
 				</div>
 			</div>
 		</div>
@@ -541,51 +539,37 @@ footer {
 </div>
 
 <div id="news">
-	<h1>병원관련 뉴스 & 이슈</h1>
+	<!-- Title -->
+	<h1>최신 뉴스</h1>
+	<!-- Content boxes for news -->
 	<div class="contents">
+		<!-- Content box 1 -->
 		<div class="contentsBox">
-			<h3>변경 예정(밑 기사들)</h3>
-			<ul class="link">
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5019&contSeq=5019&board_id=311&gubun=ALL">우리
-						가족과 사회의 일상 회복을 위해 예방접종에 적극 참여해 주시기 바랍니다.</a></li>
-				<li><a target="_blank" href="#">[카드뉴스] 중앙방역대책본부 일일 국내발생 및 예방접종 현황 브리핑</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5017&contSeq=5017&board_id=312&gubun=ALL">코로나19
-						국내 발생 및 예방접종 현황</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=&brdGubun=&dataGubun=&ncvContSeq=364218&contSeq=364218&board_id=&gubun=ALL">10명
-						중 7명은 코로나19 백신 접종 의향</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5016&contSeq=5016&board_id=312&gubun=ALL">코로나19
-						국내 발생 및 예방접종 현황</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5014&contSeq=5014&board_id=311&gubun=ALL">[카드뉴스]
-						중앙방역대책본부 일일 국내발생 및 예방접종 현황 브리핑</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5013&contSeq=5013&board_id=312&gubun=ALL">코로나19
-						국내 발생 및 예방접종 현황 2차</a></li>
-				<li><a target="_blank"
-					href="http://ncov.mohw.go.kr/tcmBoardView.do?brdId=3&brdGubun=31&dataGubun=&ncvContSeq=5012&contSeq=5012&board_id=312&gubun=ALL">코로나19
-						국내 발생 및 예방접종 현황 1차</a></li>
+			<!-- Heading -->
+			<h3>병원 관련 뉴스</h3>
+			<!-- List -->
+			<ul>
+				<!-- List items -->
+				<li><a href="#">이번 달 병원 리뷰 랭킹 발표</a></li>
+				<li><a href="#">최근 인기 있는 병원 리뷰</a></li>
+				<li><a href="#">전국 병원 리뷰 통계 발표</a></li>
 			</ul>
 		</div>
+		<!-- Content box 2 -->
 		<div class="contentsBox">
-			<h3>협회 교육정보(밑 정보들)</h3>
-			<ul class="link">
-				<li>사회적 거리 두기 3단계 추진 중? 사실이 아닙니다.</li>
-				<li>검사량과 검사결과는 인위적인 조작이 불가능합니다.</li>
-				<li>[이미지] 정부가 ‘임시생활시설 방역업체 등의 단가를 깎고 지급을 미뤘다’는 보도는 사실과 다릅니다.</li>
-				<li>[이미지] 정부가 요금이 비싸다며 운송비를 지급하지 않는다는 보도는 사실이 아닙니다.</li>
-				<li>[정부, 농신보에 2,000억원 출연... 농업계 자금난 ‘숨통’] 기사 관련</li>
-				<li>[이미지] 교육부는 초1~2학년의 매일 등교 방침을 확정한 바 없습니다.</li>
-				<li>등교수업 시작에 대비하여 학교 방역 준비에 만전을 기하고 있습니다.</li>
-				<li>20.5.8일자 서울신문[가판] 「2차 대출도 저신용 소상공인 100% 신보 보증 추진」 제하 기사 관련</li>
+			<!-- Heading -->
+			<h3>의료 정보 뉴스</h3>
+			<!-- List -->
+			<ul>
+				<!-- List items -->
+				<li><a href="#">코로나19 예방 수칙 업데이트</a></li>
+				<li><a href="#">국내외 의료 기술 동향</a></li>
+				<li><a href="#">건강한 생활을 위한 정보</a></li>
 			</ul>
 		</div>
 	</div>
-	<div id="banner">배너 관련 이미지로 변경</div>
 </div>
+	<div id="banner">배너 관련 이미지로 변경</div>
 
 <footer>
 	<ul id="footerlink">

@@ -48,8 +48,8 @@ ul a {
 	display: flex;
 	justify-content: center;
 	padding-top: 1px;
-	weight: 80px;
-	height: 80px;
+	weight: 50px;
+	height: 50px;
 }
 
 #menu {
@@ -69,7 +69,7 @@ ul a {
 <body>
 <header>
 	<div id="logo">
-		<a href="/"><img src="https://i.postimg.cc/rwkRHjYB/image.png" height="32px"></a>
+		<a href="/">LOGO</a>
 	</div>
 	<ul id="menu">
 		<li><a href="#">채용 공고</a></li>

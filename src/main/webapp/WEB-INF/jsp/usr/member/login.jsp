@@ -15,7 +15,7 @@
 		});
 
 		signUpTab.addEventListener('click', function() {
-			loginWrap.style.height = '900px';
+			loginWrap.style.height = '1000px';
 		});
 	});
 </script>
@@ -230,6 +230,7 @@ a {
 			In</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
 		<div class="login-form">
 			<form action="../member/doLogin" method="POST">
+				<input type="hidden" name="afterLoginUri" value="${param.afterLoginUri }" />
 				<div class="sign-in-htm">
 
 					<div class="group">
@@ -261,11 +262,14 @@ a {
 						<label for="user" class="label">아이디</label> <input name="loginId" type="text" class="input">
 					</div>
 					<div class="group">
-						<label for="pass" class="label">비밀번호</label> <input name="pass" type="password" class="input" data-type="password">
+						<label for="pass" class="label">비밀번호</label> <input name="loginPw" type="password" class="input" data-type="password">
 					</div>
 					<div class="group">
-						<label for="pass" class="label">비밀번호 확인</label> <input name="pass" type="password" class="input"
+						<label for="pass" class="label">비밀번호 확인</label> <input name="loginPw2" type="password" class="input"
 							data-type="password">
+					</div>
+					<div class="group">
+						<label for="pass" class="label">이름</label> <input name="name" type="text" class="input">
 					</div>
 					<div class="group">
 						<label for="pass" class="label">이메일</label> <input name="email" type="text" class="input">

@@ -92,7 +92,7 @@ public class UsrMemberController {
 
 	@RequestMapping("/usr/member/doJoin")
 	@ResponseBody
-	public String doJoin(HttpServletRequest req, String loginId, String loginPw, String name, String nickname,
+	public String doJoin(HttpServletRequest req, String loginId, String loginPw, String loginPw2, String name, String nickname,
 			String cellphoneNum, String email) {
 		Rq rq = (Rq) req.getAttribute("rq");
 		if (rq.isLogined()) {
@@ -104,6 +104,9 @@ public class UsrMemberController {
 		}
 		if (Ut.isNullOrEmpty(loginPw)) {
 			return Ut.jsHistoryBack("F-2", "비밀번호를 입력해주세요");
+		}
+		if (Ut.isNullOrEmpty(loginPw2)) {
+			return Ut.jsHistoryBack("F-3", "비밀번호를 입력해주세요");
 		}
 		if (Ut.isNullOrEmpty(name)) {
 			return Ut.jsHistoryBack("F-3", "이름을 입력해주세요");
@@ -117,6 +120,9 @@ public class UsrMemberController {
 		}
 		if (Ut.isNullOrEmpty(email)) {
 			return Ut.jsHistoryBack("F-6", "이메일을 입력해주세요");
+		}
+		if (loginPw.equals(loginPw2) == false) {
+			return Ut.jsHistoryBack("F-9", "비밀번호를 다시 확인해주세요.");
 		}
 
 		ResultData<Integer> joinRd = memberService.join(loginId, loginPw, name, nickname, cellphoneNum, email);

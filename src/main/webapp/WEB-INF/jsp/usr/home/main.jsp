@@ -1,169 +1,188 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!-- Set the page title -->
 <c:set var="pageTitle" value="MAIN"></c:set>
+
+<!-- Begin HTML structure -->
 <div class="flex-grow"></div>
+
+<!-- CSS Styling -->
 <style>
+/* Reset default styling */
 * {
-	font-family: 'Noto Sans KR', sans-serif;
-	text-decoration: none;
-	color: #333333;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	font-weight: 300;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-decoration: none;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 300;
 }
 
+/* Body styles */
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+/* Header styles */
 header {
-	padding: 0 48px;
+    padding: 0 48px;
 }
 
+/* Navigation styles */
 ul a {
-	font-size: 16px;
+    font-size: 16px;
 }
 
+/* Logo styles */
 #logo a {
-	display: flex;
-	justify-content: center;
-	padding-top: 20px
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
+/* Menu styles */
 #menu {
-	display: flex;
-	justify-content: space-between;
-	padding-top: 20px
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
 }
 
+/* Menu link styles */
 #menu a {
-	padding-bottom: 22px;
+    padding-bottom: 22px;
 }
 
+/* Menu link hover styles */
 #menu a:hover {
-	border-bottom: 3px solid #004679;
+    border-bottom: 3px solid #004679;
 }
 
+/* Main section styles */
 #main {
-	margin-top: 24px;
-	height: 600px;
-	background-image:
-		url(https://i.postimg.cc/fW5Bv32j/jc-gellidon-x-X0-NVb-Jy8a8-unsplash.jpg);
-	background-size: cover;
-	background-position: center;
-	display: flex;
+    margin-top: 24px;
+    height: 600px;
+    background-image: url(https://i.postimg.cc/fW5Bv32j/jc-gellidon-x-X0-NVb-Jy8a8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
 }
-
+/* Text section styles */
 #text {
-	width: 1048px;
-	height: 420px;
-	border: 5px solid #ffffff;
-	margin: auto;
-	display: flex;
+    width: 1048px;
+    height: 420px;
+    border: 5px solid #ffffff;
+    margin: auto;
+    display: flex;
 }
 
+/* Alignment styles */
 .align {
-	margin: auto;
+    margin: auto;
 }
 
+/* Heading styles */
 #text h1 {
-	color: #ffffff;
-	font-size: 32px;
-	font-weight: 700;
-	text-align: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
 }
 
 #text h2 {
-	color: #ffffff;
-	font-size: 48px;
-	font-weight: 700;
-	text-align: center;
-	line-height: 58px
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 58px;
 }
 
 #text h3 {
-	font-size: 16px;
-	text-align: center;
-	background-color: #ffffff;
-	height: 40px;
-	line-height: 40px;
-	width: 43vw;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    width: 43vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 #text p {
-	color: #ffffff;
-	font-size: 16px;
-	text-align: center;
-	margin-top: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
 }
 
+/* Sub-section styles */
 #sub {
-	margin: 0 48px;
-	margin-bottom: 80px;
-	padding-top: 20px;
+    margin: 0 48px;
+    margin-bottom: 80px;
+    padding-top: 20px;
 }
 
+/* Box styles */
 .box {
-	height: 239px;
-	background-color: #22AFFF;
-	border-radius: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	margin-top: 20px;
+    height: 239px;
+    background-color: #22AFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
 }
 
 #yellow {
-	background-color: #FFC122;
+    background-color: #FFC122;
 }
 
 .box img {
-	display: flex;
-	margin-right: 20px;
-	height: 240px;
+    display: flex;
+    margin-right: 20px;
+    height: 240px;
 }
 
+/* Text box styles */
 .textBox {
-	height: 239px;
-	margin-left: 30px;
-	display: flex;
-	flex-direction: column;
+    height: 239px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .textBox p {
-	color: #ffffff;
-	font-size: 14px;
+    color: #ffffff;
+    font-size: 14px;
 }
 
 .textBox h1 {
-	color: #ffffff;
-	font-weight: 700;
-	font-size: 32px;
-	margin: 5px 0;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 5px 0;
 }
 
 .textBox a {
-	color: #ffffff;
-	width: 95px;
-	height: 24px;
-	border: 1px solid #ffffff;
-	padding: 4px 20px;
-	border-radius: 20px;
+    color: #ffffff;
+    width: 95px;
+    height: 24px;
+    border: 1px solid #ffffff;
+    padding: 4px 20px;
+    border-radius: 20px;
 }
 
 .btn {
-	margin-top: 28px;
+    margin-top: 28px;
 }
 
 .textBox a:hover {
-	background-color: #ffffff;
-	color: #22AFFF;
-	transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+    color: #22AFFF;
+    transition: all 0.3s ease-in-out;
 }
 
 #yellow .textBox a:hover {
@@ -467,7 +486,7 @@ footer {
 		<li><a href="#">자유게시판</a></li>
 		<li><a href="#">공지사항</a></li>
 		<c:if test="${!rq.isLogined() }">
-			<li><a class="hover:underline" href="../member/login">로그인</a></li>
+			<li><a class="hover:underline" href="../member/login">로그인&회원가입</a></li>
 		</c:if>
 		<c:if test="${rq.isLogined() }">
 			<li><a class="hover:underline" href="../article/write">글쓰기</a></li>

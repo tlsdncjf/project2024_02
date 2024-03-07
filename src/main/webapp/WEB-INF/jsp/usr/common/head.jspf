@@ -24,7 +24,7 @@
 * {
 	font-family: 'Noto Sans KR', sans-serif;
 	text-decoration: none;
-	color: #333333;
+	color: #00000;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -67,23 +67,25 @@ ul a {
 }
 </style>
 <body>
-<header>
-	<div id="logo">
-		<a href="/">LOGO</a>
-	</div>
-	<ul id="menu">
-		<li><a href="#">채용 공고</a></li>
-		<li><a href="#">병원 리뷰</a></li>
-		<li><a href="#">자유게시판</a></li>
-		<li><a href="#">공지사항</a></li>
-		<li><a href="../member/login">로그인</a></li>
-		<c:if test="${rq.isLogined() }">
-			<li><a class="hover:underline" href="../article/write">글쓰기</a></li>
-			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/myPage">회원정보</a></li>
-			<li><a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline"
-				href="../member/doLogout">로그아웃</a></li>
-		</c:if>
-	</ul>
-</header>
+	<header>
+		<div id="logo">
+			<a href="/">LOGO</a>
+		</div>
+		<ul id="menu">
+			<li><a href="#">채용 공고</a></li>
+			<li><a href="#">병원 리뷰</a></li>
+			<li><a href="#">자유게시판</a></li>
+			<li><a href="#">공지사항</a></li>
+			<c:if test="${!rq.isLogined() }">
+				<li><a class="hover:underline" href="../member/login">로그인</a></li>
+			</c:if>
+			<c:if test="${rq.isLogined() }">
+				<li><a class="hover:underline" href="../article/write">글쓰기</a></li>
+				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/myPage">회원정보</a></li>
+				<li><a onclick="if(confirm('로그아웃 할래?') == false) return false;" class="hover:underline"
+					href="../member/doLogout">로그아웃</a></li>
+			</c:if>
+		</ul>
+	</header>
 	<h1 style="font-size: 2rem;">${pageTitle }</h1>
 	<hr />

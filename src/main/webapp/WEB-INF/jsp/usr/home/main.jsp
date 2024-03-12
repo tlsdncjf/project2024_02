@@ -64,10 +64,12 @@ ul a {
 #main {
     margin-top: 24px;
     height: 600px;
-    background-image: url(https://i.postimg.cc/fW5Bv32j/jc-gellidon-x-X0-NVb-Jy8a8-unsplash.jpg);
+    background-image: url(https://img.freepik.com/free-psd/room-for-physiotherapy-generative-ai_587448-2032.jpg?w=1800&t=st=1710139114~exp=1710139714~hmac=2021e0e1ec1d34da8cac8d483cd1d5aacc30678c5530fe17b5f25df001927e31);
     background-size: cover;
     background-position: center;
     display: flex;
+    z-index: 1;
+    
 }
 /* Text section styles */
 #text {
@@ -516,8 +518,7 @@ footer {
 				<h1>별점 확인</h1>
 				<p>병원에 대한 평가가 궁금하다면?</p>
 				<div class="btn">
-					<a target="_blank"
-						href="../article/list">바로가기 ></a>
+					<a href="../home/APITest4">바로가기 ></a>
 				</div>
 			</div>
 		</div>
@@ -532,7 +533,7 @@ footer {
 				<h1>이직과 취업을 하고싶다면</h1>
 				<p>지금바로 공고확인하기</p>
 				<div class="btn">
-					<a target="_blank" href="../article/list">바로가기 ></a>
+					<a href="../article/list">바로가기 ></a>
 				</div>
 			</div>
 		</div>
@@ -547,8 +548,7 @@ footer {
 				<h1>자유 게시판</h1>
 				<p>외부활동 / 생활 속 건강 수칙</p>
 				<div class="btn">
-					<a target="_blank"
-						href="../article/list">바로가기 ></a>
+					<a href="../article/list">바로가기 ></a>
 				</div>
 			</div>
 		</div>

@@ -93,5 +93,12 @@ public interface MemberRepository {
 			</script>
 			""")
 	public void modifyWithoutPw(int loginedMemberId, String name, String nickname, String cellphoneNum, String email);
+ 
+	@Select("""
+			SELECT COUNT(*)
+			FROM `member`
+			WHERE loginId = #{Id}
+			""")
 
+	public int idCheck(String id);
 }

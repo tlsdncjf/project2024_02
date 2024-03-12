@@ -3,7 +3,49 @@
 <c:set var="pageTitle" value="LOGIN"></c:set>
 <%@ include file="../common/head.jspf"%>
 
+<script>
+	$(document).ready(function() {
+		$("#checkDuplicate").click(function() {
+			var id = $("#loginId").val();
 
+			if (id.trim() === '') {
+				$("#idCheckMessage").text("아이디를 입력해주세요.");
+				return;
+			}
+
+			$.ajax({
+				type : "POST",
+				url : "/idCheck",
+				data : {
+					id : id
+				},
+				success : function(data) {
+					if (data === "true") {
+						$("#idCheckMessage").text("사용 가능한 아이디입니다.");
+					} else if (data === "false") {
+						$("#idCheckMessage").text("중복된 아이디입니다.");
+					}
+				},
+				error : function() {
+					$("#idCheckMessage").text("서버와의 통신 중 오류가 발생했습니다.");
+				}
+			});
+		});
+
+		$("#signupForm").submit(function() {
+			// Disable duplicate checking
+			$("#checkDuplicate").prop("disabled", true);
+
+			// Check if the ID is available
+			if ($("#idCheckMessage").text() !== "사용 가능한 아이디입니다.") {
+				alert("아이디를 다시 확인해주세요.");
+				// Re-enable duplicate checking
+				$("#checkDuplicate").prop("disabled", false);
+				return false;
+			}
+		});
+	});
+</script>
 <script>
 	window.addEventListener('DOMContentLoaded', function() {
 		var signInTab = document.querySelector('.sign-in');
@@ -15,7 +57,7 @@
 		});
 
 		signUpTab.addEventListener('click', function() {
-			loginWrap.style.height = '1000px';
+			loginWrap.style.height = '1100px';
 		});
 	});
 </script>
@@ -259,10 +301,13 @@ a {
 			<div class="sign-up-htm">
 				<form action="../member/doJoin" method="POST">
 					<div class="group">
-						<label for="user" class="label">아이디</label> <input name="loginId" type="text" class="input">
+						<label for="user" class="label">아이디</label> <input name="loginId" id="loginId" type="text" class="input">
+						<button type="button" id="checkDuplicate">중복 체크</button>
+						<span id="idCheckMessage"></span>
 					</div>
 					<div class="group">
-						<label for="pass" class="label">비밀번호</label> <input name="loginPw" type="password" class="input" data-type="password">
+						<label for="pass" class="label">비밀번호</label> <input name="loginPw" type="password" class="input"
+							data-type="password">
 					</div>
 					<div class="group">
 						<label for="pass" class="label">비밀번호 확인</label> <input name="loginPw2" type="password" class="input"
@@ -286,7 +331,7 @@ a {
 				</form>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
+					<a><label for="tab-1"></label>Already Member?</a>
 				</div>
 			</div>
 		</div>

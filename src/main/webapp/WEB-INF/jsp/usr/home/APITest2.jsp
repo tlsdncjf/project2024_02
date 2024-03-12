@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="pageTitle" value="API TEST2"></c:set>
+<c:set var="pageTitle" value="병원 위치 정보"></c:set>
 
 <%@ include file="../common/head.jspf"%>
 
@@ -15,7 +15,7 @@
 	<!-- 지도를 표시할 div 입니다 -->
 	<div id="map" style="width: 100%; height: 350px;"></div>
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 API 키"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=86a75621620f6837f8b4bbad1e90549f"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {

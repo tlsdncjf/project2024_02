@@ -222,6 +222,21 @@ a {
 	right: 0;
 	transform: scale(0) rotate(0);
 }
+#checkDuplicate {
+    background: #1161ee;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#checkDuplicate:hover {
+    background: #0b48bf;
+}
 
 .login-form .group .check:checked+label {
 	color: #fff;

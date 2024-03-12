@@ -64,12 +64,10 @@ ul a {
 #main {
     margin-top: 24px;
     height: 600px;
-    background-image: url(https://img.freepik.com/free-psd/room-for-physiotherapy-generative-ai_587448-2032.jpg?w=1800&t=st=1710139114~exp=1710139714~hmac=2021e0e1ec1d34da8cac8d483cd1d5aacc30678c5530fe17b5f25df001927e31);
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/18/12/06/white-male-1834114_1280.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
-    z-index: 1;
-    
 }
 /* Text section styles */
 #text {
@@ -484,6 +482,7 @@ footer {
 	</div>
 	<ul id="menu">
 		<li><a href="#">채용 공고</a></li>
+		<li><a href="../home/APITest2">병원 위치</a></li>
 		<li><a href="#">병원 리뷰</a></li>
 		<li><a href="#">자유게시판</a></li>
 		<li><a href="#">공지사항</a></li>
